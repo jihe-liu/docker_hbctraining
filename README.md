@@ -7,8 +7,8 @@ Based on the operating system you use, download and install [docker](https://doc
 
 ## Step 2: Run docker image
 Start docker program on your computer. Then on your terminal, download the docker image for single cell analysis with the following command:
-```
-    docker run --rm -d -p 8787:8787 --name single_cell -e PASSWORD=rstudioSC -v /Users/jil655/Documents/HBC_Training/docker:/home/rstudio/projects vbarrerab/singlecell-base:R.4.0.3-BioC.3.11-ubuntu_20.04
+```wrap
+docker run --rm -d -p 8787:8787 --name single_cell -e PASSWORD=rstudioSC -v /Users/jil655/Documents/HBC_Training/docker:/home/rstudio/projects vbarrerab/singlecell-base:R.4.0.3-BioC.3.11-ubuntu_20.04
 ```
 > Note:
 1. The first time you run this command, it will download the `vbarrerab/singlecell-base:R.4.0.3-BioC.3.11-ubuntu_20.0` docker image from DockerHub: https://hub.docker.com/r/vbarrerab/singlecell-base.
@@ -20,7 +20,7 @@ Start docker program on your computer. Then on your terminal, download the docke
 
 At this point, you can check whether the container has been running, using `docker container` command. You should see a container ID and its associated properties.
 ```
-    docker container ls
+docker container ls
 ```
 
 ## Step 3: Access Rstudio
@@ -52,11 +52,11 @@ As you perform the analysis, newly generated files will be automatically mounted
 ## Appendix: some useful command
 Here we summarize some frequenctly used docker command, all of which can be run on the command line.
 ```
-    docker images       # list all docker images
-    docker container ls     # check status of container
-    docker container ls -a      # check all containers (started and stopped)
-    docker container stop container_id      # stop a container that is currently running
-    docker container start container_name       # start an existing container   
+docker images       # list all docker images
+docker container ls     # check status of container
+docker container ls -a      # check all containers (started and stopped)
+docker container stop container_id      # stop a container that is currently running
+docker container start container_name       # start an existing container   
 ```
 
 ## Reference
