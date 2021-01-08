@@ -24,7 +24,7 @@ At this point, you can check whether the container has been running, using `dock
 ```
 
 ## Step 3: Access Rstudio
-Once the container is started, open your web browser, and go to [localhost:8787](localhost:8787).
+Once the container is started, open your web browser, and go to **localhost:8787**.
 You will be prompted to log into Rstudio. The Username is `rstudio` (this is by default), and the password is `rstudioSC` (the one you specified earlier in the `docker run` command). You should now see Rstudio interface in docker environment.
 
 ## Step 4: Load libraries
