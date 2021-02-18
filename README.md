@@ -10,6 +10,12 @@ Start docker program on your computer. Then on your terminal, download the docke
 ```wrap
 docker run --rm -d -p 8787:8787 --name single_cell -e PASSWORD=rstudioSC -v /Users/jil655/Documents/HBC_Training/docker:/home/rstudio/projects vbarrerab/singlecell-base:R.4.0.3-BioC.3.11-ubuntu_20.04
 ```
+
+After the container is run for the first time, you can re-start that existing container with the command:
+```
+docker container start single_cell
+```
+
 > Note:
 1. The first time you run this command, it will download the `vbarrerab/singlecell-base:R.4.0.3-BioC.3.11-ubuntu_20.0` docker image from DockerHub: https://hub.docker.com/r/vbarrerab/singlecell-base.
 2. Use of flags
@@ -47,16 +53,21 @@ sessionInfo()
 ```
 
 ## Step 5: End container
-As you perform the analysis, newly generated files will be automatically mounted to the local folder that you specified. After you are done with the analysis, you first close the web browser. Then on your terminal, hit `ctrl`+`c` to end the program. 
+As you perform the analysis, newly generated files will be automatically mounted to the local folder that you specified. After you are done with the analysis, you first close the web browser. Then on your terminal, hit `ctrl`+`c` to end the program. You might also need to stop the container with the command:
+```
+docker container stop single_cell
+```
 
 ## Appendix: some useful command
 Here we summarize some frequenctly used docker command, all of which can be run on the command line.
 ```
-docker images       # list all docker images
+docker images       # list all docker images (use `-a` to show intermediate images)
+docker rmi Image_ID         # remove docker image
 docker container ls     # check status of container
 docker container ls -a      # check all containers (started and stopped)
 docker container stop container_id      # stop a container that is currently running
-docker container start container_name       # start an existing container   
+docker container start container_name       # start an existing container
+docker rm container_id      # remove docker container
 ```
 
 ## Reference
