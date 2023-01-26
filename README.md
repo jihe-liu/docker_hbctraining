@@ -53,7 +53,7 @@ sessionInfo()
 ## Step 6: Set up the project
 Create a project in Rstudio, and add folders `data`, `results`, `figures`. Those folders are mounted on your local computer as well. Download the sequencing data to the `data` folder on your local computer. You are now all set to start the actual analysis.
 
-## Step 6: End the container
+## Step 7: End the container
 As you perform the analysis, newly-generated files will be automatically mounted to the local folder that you specified. When you finish the analysis, close the web browser. Then on your terminal, hit `ctrl`+`c` to end the program. Lastly, stop the container with the command:
 ```
 docker container stop sc_rnaseq
@@ -71,6 +71,31 @@ docker container stop container_id      # stop a container that is currently run
 docker container start container_name       # start an existing container
 docker rm container_id      # remove docker container
 docker pull rocker/r-base       # pull an image from DockerHub
+```
+
+## How to upload the image to docker hub
+
+Below are the steps to upload the image to docker hub. Currently, it is hosted at https://hub.docker.com/r/liujihe/single_cell_rnaseq. The last step shows how to pull the image to the local computer.
+
+1. login docker on command line
+```
+docker login
+```
+Follow username and password
+
+2. tag image
+```
+docker tag image_id dockerhub_username/image_name
+```
+
+3. push image to the hub
+```
+docker push dockerhub_username/image_name
+```
+
+4. Pull the public image to the local computer
+```
+docker pull liujihe/single_cell_rnaseq
 ```
 
 ## Reference
